@@ -1,0 +1,219 @@
+/* 竹简风格样式 */
+
+/* 竹简文字效果 */
+.bamboo-text {
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 2.2;
+  color: var(--deep-ink);
+  text-shadow: 1px 1px 1px rgba(90, 108, 125, 0.1);
+}
+
+/* 竹简标题样式 */
+.bamboo-title {
+  font-family: 'Liu Jian Mao Cao', 'Ma Shan Zheng', cursive;
+  font-weight: 700;
+  letter-spacing: 4px;
+  writing-mode: horizontal-tb;
+  position: relative;
+  display: inline-block;
+}
+
+/* 竹简装饰线 */
+.bamboo-decoration {
+  position: relative;
+  padding: 20px 0;
+}
+
+.bamboo-decoration::before,
+.bamboo-decoration::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--river-gray) 20%,
+    var(--river-gray) 80%,
+    transparent
+  );
+}
+
+.bamboo-decoration::before {
+  top: 0;
+}
+
+.bamboo-decoration::after {
+  bottom: 0;
+}
+
+/* 竹简纹理背景 */
+.bamboo-texture {
+  position: relative;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(90, 108, 125, 0.02) 0px,
+      rgba(90, 108, 125, 0.02) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    linear-gradient(180deg, rgba(240, 244, 248, 0.8), rgba(255, 255, 255, 0.9));
+}
+
+.bamboo-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(90, 108, 125, 0.01) 2px,
+      rgba(90, 108, 125, 0.01) 4px
+    );
+  pointer-events: none;
+}
+
+/* 竹简卡片样式 */
+.bamboo-card {
+  background: 
+    linear-gradient(to right, 
+      rgba(168, 200, 216, 0.1) 0%, 
+      transparent 2%, 
+      transparent 98%, 
+      rgba(168, 200, 216, 0.1) 100%
+    ),
+    rgba(255, 255, 255, 0.9);
+  border-left: 3px solid var(--ice-blue);
+  border-right: 3px solid var(--ice-blue);
+  position: relative;
+  padding: 30px 40px;
+  box-shadow: 
+    inset 2px 0 4px rgba(168, 200, 216, 0.1),
+    inset -2px 0 4px rgba(168, 200, 216, 0.1),
+    0 4px 16px var(--cold-shadow);
+}
+
+/* 竹简条纹效果 */
+.bamboo-stripes {
+  position: relative;
+}
+
+.bamboo-stripes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 38px,
+    rgba(168, 200, 216, 0.15) 38px,
+    rgba(168, 200, 216, 0.15) 40px,
+    transparent 40px,
+    transparent 78px,
+    rgba(90, 108, 125, 0.1) 78px,
+    rgba(90, 108, 125, 0.1) 80px
+  );
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* 竹简印章效果 */
+.bamboo-seal {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 2px solid var(--river-gray);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--river-gray);
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  box-shadow: inset 0 0 8px rgba(90, 108, 125, 0.1);
+}
+
+.bamboo-seal::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid var(--river-gray);
+  opacity: 0.3;
+}
+
+/* 竹节分隔线 */
+.bamboo-divider {
+  height: 30px;
+  position: relative;
+  margin: 30px 0;
+}
+
+.bamboo-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--ice-blue) 30%,
+    var(--river-gray),
+    var(--ice-blue) 70%,
+    transparent
+  );
+}
+
+.bamboo-divider::after {
+  content: '❄';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: var(--ice-blue);
+  background: var(--frost-white);
+  padding: 0 12px;
+}
+
+/* 古文排版样式 */
+.ancient-layout {
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+.ancient-layout p {
+  text-indent: 2em;
+  margin: 1em 0;
+}
+
+.ancient-layout p:first-child {
+  text-indent: 0;
+}
+
+/* 强调文字 - 竹简风格 */
+.bamboo-emphasis {
+  font-weight: 700;
+  color: var(--river-gray);
+  border-bottom: 2px solid var(--ice-blue);
+  padding-bottom: 2px;
+  letter-spacing: 1px;
+}
+

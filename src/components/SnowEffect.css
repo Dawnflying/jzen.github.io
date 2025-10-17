@@ -1,0 +1,13 @@
+.snow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.9;
+  /* 营造寒江雪的氛围 */
+  filter: drop-shadow(0 0 2px rgba(168, 200, 216, 0.3));
+}
+

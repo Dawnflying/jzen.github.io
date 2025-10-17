@@ -1,0 +1,219 @@
+.drafts-page {
+  min-height: 100vh;
+  background: var(--paper-white);
+}
+
+.drafts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+
+.drafts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.drafts-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 32px;
+  color: var(--deep-ink);
+  margin: 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 2px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--cold-shadow);
+  border: 2px solid var(--light-mist);
+  transition: background 0.3s ease;
+}
+
+.empty-state svg {
+  color: var(--ice-blue);
+  margin-bottom: 24px;
+  opacity: 0.5;
+}
+
+.empty-state h2 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin: 0 0 24px 0;
+}
+
+.drafts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.draft-card {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 38px,
+      rgba(168, 200, 216, 0.05) 38px,
+      rgba(168, 200, 216, 0.05) 40px
+    ),
+    var(--card-bg);
+  border-radius: 8px;
+  padding: 20px 28px;
+  box-shadow: 
+    inset 2px 0 4px rgba(168, 200, 216, 0.1),
+    inset -2px 0 4px rgba(168, 200, 216, 0.1),
+    0 4px 16px var(--cold-shadow);
+  border-left: 3px solid var(--ice-blue);
+  border-right: 3px solid var(--ice-blue);
+  border-top: 1px solid rgba(168, 200, 216, 0.2);
+  border-bottom: 1px solid rgba(168, 200, 216, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.draft-card:hover {
+  transform: translateX(4px);
+  box-shadow: 
+    inset 2px 0 4px rgba(168, 200, 216, 0.15),
+    inset -2px 0 4px rgba(168, 200, 216, 0.15),
+    0 6px 20px rgba(168, 200, 216, 0.3);
+  border-left-width: 4px;
+}
+
+.draft-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.draft-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(168, 200, 216, 0.2);
+  color: var(--river-gray);
+  border: 1px solid var(--ice-blue);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+}
+
+.draft-date {
+  font-size: 13px;
+  color: var(--river-gray);
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.draft-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--deep-ink);
+  margin: 0 0 12px 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.draft-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.draft-category {
+  padding: 4px 10px;
+  background: linear-gradient(135deg, var(--winter-blue), var(--ice-blue));
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.draft-tags {
+  padding: 4px 10px;
+  background: rgba(168, 200, 216, 0.15);
+  color: var(--river-gray);
+  border: 1px solid var(--ice-blue);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.draft-excerpt {
+  color: var(--river-gray);
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.draft-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--light-mist);
+}
+
+.draft-actions .btn {
+  flex: 1;
+  justify-content: center;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.btn-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-danger:hover {
+  background: #dc3545;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .drafts-container {
+    padding: 20px 20px 60px;
+  }
+
+  .drafts-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .draft-card {
+    padding: 16px 20px;
+  }
+
+  .draft-actions {
+    flex-wrap: wrap;
+  }
+
+  .draft-actions .btn {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 100px;
+  }
+}
+

@@ -1,0 +1,479 @@
+.editor-page {
+  min-height: 100vh;
+  background: var(--paper-white);
+}
+
+.editor-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.editor-content {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 38px,
+      rgba(168, 200, 216, 0.05) 38px,
+      rgba(168, 200, 216, 0.05) 40px
+    ),
+    var(--card-bg);
+  border-radius: 8px;
+  padding: 48px;
+  box-shadow: 
+    inset 2px 0 4px rgba(168, 200, 216, 0.1),
+    inset -2px 0 4px rgba(168, 200, 216, 0.1),
+    0 4px 16px var(--cold-shadow);
+  border-left: 4px solid var(--ice-blue);
+  border-right: 4px solid var(--ice-blue);
+  border-top: 1px solid rgba(168, 200, 216, 0.2);
+  border-bottom: 1px solid rgba(168, 200, 216, 0.2);
+  transition: background 0.3s ease;
+}
+
+.editor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-section label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--deep-ink);
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-section.half {
+  flex: 1;
+}
+
+.title-input {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 16px;
+  border: 2px solid var(--light-mist);
+  border-left: 3px solid var(--ice-blue);
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  letter-spacing: 1px;
+}
+
+.title-input:focus {
+  border-color: var(--ice-blue);
+  outline: none;
+  border-left-width: 4px;
+}
+
+.category-select,
+.form-section input {
+  padding: 12px 16px;
+  border: 2px solid var(--light-mist);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  transition: border-color 0.3s ease;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.category-select:focus,
+.form-section input:focus {
+  border-color: var(--ice-blue);
+  outline: none;
+  background: white;
+}
+
+.tags-input-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.tags-input-wrapper input {
+  flex: 1;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--ice-blue);
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid var(--winter-blue);
+}
+
+.tag-remove {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.tag-remove:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.content-editor {
+  height: 500px;
+}
+
+.content-editor .ql-container {
+  font-size: 16px;
+  font-family: 'Noto Serif SC', serif;
+  min-height: 400px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.content-editor .ql-editor {
+  min-height: 400px;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.content-editor .ql-editor.ql-blank::before {
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+/* 暗色主题下的编辑器工具栏 */
+[data-theme="dark"] .content-editor .ql-toolbar {
+  background: rgba(30, 41, 55, 0.9);
+  border-color: var(--ice-blue);
+}
+
+[data-theme="dark"] .content-editor .ql-stroke {
+  stroke: var(--text-secondary);
+}
+
+[data-theme="dark"] .content-editor .ql-fill {
+  fill: var(--text-secondary);
+}
+
+[data-theme="dark"] .content-editor .ql-picker-label {
+  color: var(--text-secondary);
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(45, 62, 80, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 38px,
+      rgba(168, 200, 216, 0.05) 38px,
+      rgba(168, 200, 216, 0.05) 40px
+    ),
+    white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--ice-blue);
+  border-right: 4px solid var(--ice-blue);
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-content h3 {
+  font-size: 22px;
+  color: var(--deep-ink);
+  margin: 0 0 24px 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 2px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--light-mist);
+}
+
+.modal-body {
+  padding: 32px;
+}
+
+.modal-body label {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--deep-ink);
+  margin-bottom: 8px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+}
+
+.datetime-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--light-mist);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.datetime-input:focus {
+  border-color: var(--ice-blue);
+  outline: none;
+  background: white;
+}
+
+.modal-hint {
+  font-size: 13px;
+  color: var(--river-gray);
+  margin: 12px 0 0 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.modal-actions {
+  padding: 20px 32px;
+  border-top: 2px solid var(--light-mist);
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  background: rgba(240, 244, 248, 0.5);
+}
+
+/* 预览模式 */
+.preview-mode {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.preview-header {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--silk-beige);
+}
+
+.preview-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--deep-ink);
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  font-family: 'Liu Jian Mao Cao', 'ZCOOL XiaoWei', serif;
+  letter-spacing: 3px;
+  border-left: 3px solid var(--ice-blue);
+  padding-left: 16px;
+}
+
+.preview-meta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.preview-category {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, var(--winter-blue), var(--ice-blue));
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.preview-author {
+  color: var(--ice-blue);
+  font-weight: 600;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+}
+
+.preview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-tag {
+  padding: 4px 12px;
+  background: rgba(168, 200, 216, 0.15);
+  color: var(--river-gray);
+  border: 1px solid var(--ice-blue);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.preview-content {
+  font-size: 17px;
+  line-height: 2.2;
+  color: var(--deep-ink);
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+
+.preview-content h1 {
+  font-size: 32px;
+  margin: 32px 0 16px 0;
+  color: var(--primary-red);
+}
+
+.preview-content h2 {
+  font-size: 24px;
+  margin: 28px 0 14px 0;
+  color: var(--river-gray);
+  border-bottom: 2px solid var(--ice-blue);
+  border-left: 3px solid var(--ice-blue);
+  padding-bottom: 8px;
+  padding-left: 12px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.preview-content h3 {
+  font-size: 24px;
+  margin: 24px 0 12px 0;
+  color: var(--dark-ink);
+}
+
+.preview-content p {
+  margin: 16px 0;
+}
+
+.preview-content blockquote {
+  border-left: 4px solid var(--ice-blue);
+  border-right: 4px solid var(--ice-blue);
+  background: rgba(168, 200, 216, 0.08);
+  padding: 20px 28px;
+  margin: 24px 0;
+  font-style: normal;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+  line-height: 2.4;
+}
+
+.preview-content ul, .preview-content ol {
+  margin: 16px 0;
+  padding-left: 40px;
+}
+
+.preview-content code {
+  background: var(--silk-beige);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.preview-content pre {
+  background: var(--dark-ink);
+  color: var(--paper-white);
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .editor-container {
+    padding: 20px 20px 60px;
+  }
+
+  .editor-content {
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editor-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .content-editor {
+    height: 400px;
+  }
+
+  .content-editor .ql-editor {
+    min-height: 300px;
+  }
+
+  .preview-title {
+    font-size: 28px;
+  }
+
+  .preview-content {
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,189 @@
+.header {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      var(--card-bg) 0,
+      var(--card-bg) 38px,
+      rgba(168, 200, 216, 0.05) 38px,
+      rgba(168, 200, 216, 0.05) 40px
+    );
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--ice-blue);
+  border-top: 1px solid rgba(168, 200, 216, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--cold-shadow);
+  transition: background 0.3s ease;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo-text {
+  font-family: 'Liu Jian Mao Cao', 'Ma Shan Zheng', cursive;
+  font-size: 28px;
+  color: var(--river-gray);
+  margin: 0;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(168, 200, 216, 0.2);
+  border-left: 3px solid var(--ice-blue);
+  padding-left: 12px;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: var(--distant-mountain);
+  margin: 4px 0 0 0;
+  letter-spacing: 2px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  padding-left: 15px;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--winter-blue);
+  border-color: var(--ice-blue);
+  background: rgba(168, 200, 216, 0.1);
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-btn {
+  background: none;
+  cursor: pointer;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--card-bg);
+  border: 2px solid var(--ice-blue);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px var(--cold-shadow);
+  min-width: 160px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: rgba(168, 200, 216, 0.1);
+  color: var(--winter-blue);
+}
+
+.header-decoration {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.decoration-line {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--ice-blue) 20%,
+    var(--winter-blue),
+    var(--ice-blue) 80%,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    gap: 8px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .user-dropdown {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+

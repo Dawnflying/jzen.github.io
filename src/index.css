@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 明色调 - 独钓寒江雪配色 */
+  --ice-blue: #a8c8d8;        /* 冰蓝色 */
+  --frost-white: #f0f4f8;     /* 霜白色 */
+  --river-gray: #5a6c7d;      /* 江水灰 */
+  --deep-ink: #2d3e50;        /* 深墨色 */
+  --light-mist: #b8c5d0;      /* 淡雾色 */
+  --snow-white: #ffffff;      /* 雪白 */
+  --distant-mountain: #708a9e; /* 远山青 */
+  --cold-shadow: rgba(90, 108, 125, 0.15);
+  --winter-blue: #6a8caf;     /* 冬日蓝 */
+  
+  /* 背景渐变 */
+  --bg-gradient-start: #d4dfe8;
+  --bg-gradient-mid: #e8eef3;
+  --bg-gradient-end: #f0f4f8;
+  
+  /* 卡片背景 */
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
+  
+  /* 文字颜色 */
+  --text-primary: #2d3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #708a9e;
+  
+  /* 向后兼容的别名 */
+  --primary-red: var(--river-gray);
+  --primary-gold: var(--ice-blue);
+  --dark-ink: var(--deep-ink);
+  --light-ink: var(--river-gray);
+  --paper-white: var(--frost-white);
+  --bamboo-green: var(--distant-mountain);
+  --silk-beige: var(--light-mist);
+  --shadow-color: var(--cold-shadow);
+}
+
+/* 暗色调 - 寒夜雪境配色 */
+[data-theme="dark"] {
+  /* 暗色主题色 */
+  --ice-blue: #7ba3c0;        /* 月光蓝 */
+  --frost-white: #1a2332;     /* 夜空色 */
+  --river-gray: #9db4c8;      /* 雪映灰 */
+  --deep-ink: #e8ecf0;        /* 霜白墨 */
+  --light-mist: #3d4e5f;      /* 暗雾色 */
+  --snow-white: #0f1419;      /* 深夜黑 */
+  --distant-mountain: #6a8aa8; /* 夜山青 */
+  --cold-shadow: rgba(0, 0, 0, 0.3);
+  --winter-blue: #5a7fa3;     /* 寒夜蓝 */
+  
+  /* 背景渐变 */
+  --bg-gradient-start: #0f1419;
+  --bg-gradient-mid: #1a2332;
+  --bg-gradient-end: #1e2937;
+  
+  /* 卡片背景 */
+  --card-bg: rgba(26, 35, 50, 0.9);
+  --card-bg-hover: rgba(30, 41, 55, 0.95);
+  
+  /* 文字颜色 */
+  --text-primary: #e8ecf0;
+  --text-secondary: #9db4c8;
+  --text-muted: #6a8aa8;
+  
+  /* 向后兼容的别名 */
+  --primary-red: var(--river-gray);
+  --primary-gold: var(--ice-blue);
+  --dark-ink: var(--deep-ink);
+  --light-ink: var(--river-gray);
+  --paper-white: var(--frost-white);
+  --bamboo-green: var(--distant-mountain);
+  --silk-beige: var(--light-mist);
+  --shadow-color: var(--cold-shadow);
+}
+
+body {
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+  color: var(--text-primary);
+  line-height: 2;
+  letter-spacing: 0.5px;
+  min-height: 100vh;
+  position: relative;
+  font-weight: 500;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* 寒江背景效果 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(180deg, rgba(168, 200, 216, 0.1) 0%, transparent 30%),
+    radial-gradient(ellipse at 50% 100%, rgba(90, 108, 125, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme="dark"] body::before {
+  background: 
+    linear-gradient(180deg, rgba(123, 163, 192, 0.05) 0%, transparent 30%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 滚动条样式 - 寒江风格 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-mist);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ice-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--river-gray);
+}
+
