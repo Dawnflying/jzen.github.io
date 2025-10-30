@@ -5,38 +5,47 @@
 }
 
 :root {
-  /* 明色调 - 独钓寒江雪配色 */
-  --ice-blue: #a8c8d8;        /* 冰蓝色 */
-  --frost-white: #f0f4f8;     /* 霜白色 */
+  /* 明色调 - 中国风配色 */
+  --ice-blue: #7ba3c0;        /* 青花蓝 */
+  --frost-white: #faf8f3;     /* 宣纸白 */
   --river-gray: #5a6c7d;      /* 江水灰 */
   --deep-ink: #2d3e50;        /* 深墨色 */
-  --light-mist: #b8c5d0;      /* 淡雾色 */
+  --light-mist: #c9b8a3;      /* 淡褐色 */
   --snow-white: #ffffff;      /* 雪白 */
   --distant-mountain: #708a9e; /* 远山青 */
   --cold-shadow: rgba(90, 108, 125, 0.15);
   --winter-blue: #6a8caf;     /* 冬日蓝 */
-  
-  /* 背景渐变 */
-  --bg-gradient-start: #d4dfe8;
-  --bg-gradient-mid: #e8eef3;
-  --bg-gradient-end: #f0f4f8;
-  
+
+  /* 中国传统色彩 */
+  --cinnabar-red: #c83c23;    /* 朱砂红 */
+  --ink-green: #2e4e3f;       /* 墨绿 */
+  --gold-yellow: #d4a76a;     /* 金黄 */
+  --imperial-yellow: #f0c239; /* 帝王黄 */
+  --jade-green: #7eb09b;      /* 玉绿 */
+  --purple-clay: #8c5e58;     /* 紫砂 */
+  --indigo-blue: #2a4b7c;     /* 靛蓝 */
+
+  /* 背景渐变 - 水墨晕染效果 */
+  --bg-gradient-start: #f5f0e8;
+  --bg-gradient-mid: #faf8f3;
+  --bg-gradient-end: #fff;
+
   /* 卡片背景 */
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --card-bg-hover: rgba(255, 255, 255, 0.95);
-  
+  --card-bg: rgba(250, 248, 243, 0.95);
+  --card-bg-hover: rgba(255, 255, 255, 0.98);
+
   /* 文字颜色 */
   --text-primary: #2d3e50;
   --text-secondary: #5a6c7d;
   --text-muted: #708a9e;
-  
+
   /* 向后兼容的别名 */
-  --primary-red: var(--river-gray);
-  --primary-gold: var(--ice-blue);
+  --primary-red: var(--cinnabar-red);
+  --primary-gold: var(--gold-yellow);
   --dark-ink: var(--deep-ink);
   --light-ink: var(--river-gray);
   --paper-white: var(--frost-white);
-  --bamboo-green: var(--distant-mountain);
+  --bamboo-green: var(--jade-green);
   --silk-beige: var(--light-mist);
   --shadow-color: var(--cold-shadow);
 }
@@ -91,7 +100,7 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* 寒江背景效果 */
+/* 水墨晕染背景效果 */
 body::before {
   content: '';
   position: fixed;
@@ -99,10 +108,29 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    linear-gradient(180deg, rgba(168, 200, 216, 0.1) 0%, transparent 30%),
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(212, 167, 106, 0.08) 0%, transparent 30%),
+    radial-gradient(ellipse at 80% 60%, rgba(126, 176, 155, 0.06) 0%, transparent 40%),
     radial-gradient(ellipse at 50% 100%, rgba(90, 108, 125, 0.05) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* 祥云纹理装饰 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path d="M30,50 Q40,30 60,40 T90,50 Q100,60 110,50 T140,40 Q150,35 160,45" stroke="%23d4a76a" stroke-width="1" fill="none" opacity="0.15"/><path d="M20,70 Q35,55 50,65 T80,70 Q95,75 105,70" stroke="%237eb09b" stroke-width="1" fill="none" opacity="0.1"/></svg>');
+  background-size: 400px 200px;
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.3;
   z-index: 0;
   transition: opacity 0.5s ease;
 }

@@ -5,14 +5,17 @@
 }
 
 .hero-section {
-  background: linear-gradient(180deg, rgba(168, 200, 216, 0.2) 0%, rgba(240, 244, 248, 0.5) 100%);
-  padding: 80px 40px;
+  background:
+    linear-gradient(135deg, rgba(212, 167, 106, 0.12) 0%, rgba(126, 176, 155, 0.08) 50%, rgba(123, 163, 192, 0.1) 100%);
+  padding: 100px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(168, 200, 216, 0.3);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--gold-yellow), var(--jade-green), var(--ice-blue), transparent) 1;
 }
 
+/* 中国风背景图案 */
 .hero-section::before {
   content: '';
   position: absolute;
@@ -20,20 +23,28 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="60" fill="%23a8c8d8" opacity="0.08">雪</text></svg>');
-  background-size: 180px;
+  background:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="%23d4a76a" opacity="0.06" font-family="serif">禅</text></svg>'),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" stroke="%237eb09b" stroke-width="1" fill="none" opacity="0.04"/><circle cx="50" cy="50" r="20" stroke="%237eb09b" stroke-width="1" fill="none" opacity="0.04"/></svg>');
+  background-size: 200px, 150px;
+  background-position: 20% 30%, 80% 70%;
+  background-repeat: no-repeat;
   pointer-events: none;
 }
 
-/* 寒江水波纹效果 */
+/* 祥云波纹效果 */
 .hero-section::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(180deg, transparent 0%, rgba(168, 200, 216, 0.1) 100%);
+  height: 120px;
+  background:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q150,20 300,60 T600,60 Q750,90 900,60 T1200,60 L1200,120 L0,120 Z" fill="%23f5f0e8" opacity="0.6"/><path d="M0,80 Q200,40 400,80 T800,80 Q900,100 1000,80 T1200,80 L1200,120 L0,120 Z" fill="%23faf8f3" opacity="0.8"/></svg>');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
   pointer-events: none;
 }
 
@@ -46,29 +57,73 @@
 
 .hero-title {
   font-family: 'Liu Jian Mao Cao', 'Ma Shan Zheng', cursive;
-  font-size: 64px;
-  color: var(--river-gray);
-  margin: 0 0 20px 0;
-  letter-spacing: 16px;
-  text-shadow: 2px 2px 8px rgba(168, 200, 216, 0.3);
+  font-size: 72px;
+  background: linear-gradient(135deg,
+    var(--indigo-blue) 0%,
+    var(--jade-green) 30%,
+    var(--gold-yellow) 60%,
+    var(--cinnabar-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 24px 0;
+  letter-spacing: 18px;
+  text-shadow: none;
   position: relative;
   font-weight: 700;
-  padding: 0 20px;
-  border-left: 4px solid var(--ice-blue);
-  border-right: 4px solid var(--ice-blue);
+  padding: 20px 32px;
   display: inline-block;
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg,
+    var(--cinnabar-red),
+    var(--gold-yellow),
+    var(--jade-green)) 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-clip: padding-box;
+  box-shadow:
+    0 4px 16px rgba(212, 167, 106, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.hero-title::before {
+  content: '❀';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--cinnabar-red);
+  opacity: 0.6;
+}
+
+.hero-title::after {
+  content: '❀';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--gold-yellow);
+  opacity: 0.6;
 }
 
 .hero-subtitle {
-  font-size: 18px;
-  color: var(--distant-mountain);
+  font-size: 20px;
+  color: var(--indigo-blue);
   margin: 0 0 40px 0;
-  line-height: 2.2;
+  line-height: 2.4;
   font-style: normal;
   font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   font-weight: 500;
-  text-shadow: 1px 1px 2px rgba(168, 200, 216, 0.2);
+  text-shadow: 1px 1px 3px rgba(212, 167, 106, 0.15);
+  padding: 16px 32px;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(250, 248, 243, 0.8));
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(90, 108, 125, 0.1);
 }
 
 .hero-decoration {
@@ -80,9 +135,13 @@
 }
 
 .decoration-char {
-  font-size: 28px;
-  color: var(--ice-blue);
-  opacity: 0.8;
+  font-size: 32px;
+  background: linear-gradient(135deg, var(--cinnabar-red), var(--gold-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(212, 167, 106, 0.3));
 }
 
 .decoration-line {
@@ -106,30 +165,56 @@
 }
 
 .category-btn {
-  padding: 10px 24px;
-  border: 2px solid var(--ice-blue);
-  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 28px;
+  border: 2px solid var(--gold-yellow);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(250, 248, 243, 0.95));
   color: var(--deep-ink);
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   border-radius: 24px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 2px 8px rgba(212, 167, 106, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 167, 106, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.category-btn:hover::before {
+  left: 100%;
 }
 
 .category-btn:hover {
-  background: var(--ice-blue);
+  background: linear-gradient(135deg, var(--gold-yellow), var(--imperial-yellow));
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 200, 216, 0.3);
+  box-shadow:
+    0 6px 16px rgba(212, 167, 106, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: var(--imperial-yellow);
 }
 
 .category-btn.active {
-  background: var(--river-gray);
-  border-color: var(--river-gray);
+  background: linear-gradient(135deg, var(--indigo-blue), var(--jade-green));
+  border-color: var(--jade-green);
   color: white;
-  box-shadow: 0 4px 12px rgba(90, 108, 125, 0.3);
+  box-shadow:
+    0 4px 12px rgba(42, 75, 124, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .posts-grid {
@@ -139,28 +224,29 @@
 }
 
 .post-card {
-  background: 
+  background:
     repeating-linear-gradient(
       90deg,
       transparent 0,
       transparent 38px,
-      rgba(168, 200, 216, 0.08) 38px,
-      rgba(168, 200, 216, 0.08) 40px
+      rgba(212, 167, 106, 0.05) 38px,
+      rgba(212, 167, 106, 0.05) 40px
     ),
-    var(--card-bg);
-  border-radius: 8px;
+    linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.92) 100%);
+  border-radius: 12px;
   padding: 24px 32px;
   text-decoration: none;
   color: var(--text-primary);
-  box-shadow: 
-    inset 2px 0 4px rgba(168, 200, 216, 0.1),
-    inset -2px 0 4px rgba(168, 200, 216, 0.1),
-    0 4px 16px var(--cold-shadow);
-  border-left: 3px solid var(--ice-blue);
-  border-right: 3px solid var(--ice-blue);
-  border-top: 1px solid rgba(168, 200, 216, 0.2);
-  border-bottom: 1px solid rgba(168, 200, 216, 0.2);
-  transition: all 0.3s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 4px rgba(90, 108, 125, 0.08),
+    0 8px 24px rgba(90, 108, 125, 0.12);
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg,
+    var(--gold-yellow) 0%,
+    var(--jade-green) 50%,
+    var(--ice-blue) 100%) 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -170,33 +256,69 @@
   align-items: flex-start;
 }
 
+/* 水墨晕染效果 */
 .post-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(to right, var(--ice-blue), var(--winter-blue), var(--ice-blue));
-  opacity: 0.6;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(212, 167, 106, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(126, 176, 155, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+/* 装饰性印章图案 */
+.post-card::after {
+  content: '禅';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--cinnabar-red);
+  border: 2px solid var(--cinnabar-red);
+  border-radius: 2px;
+  opacity: 0.15;
+  font-family: 'ZCOOL XiaoWei', serif;
+  transform: rotate(-5deg);
+  pointer-events: none;
 }
 
 .post-card:hover {
-  transform: translateX(4px);
-  box-shadow: 
-    inset 2px 0 4px rgba(168, 200, 216, 0.15),
-    inset -2px 0 4px rgba(168, 200, 216, 0.15),
-    0 6px 24px rgba(168, 200, 216, 0.4);
-  border-left-width: 4px;
-  background: 
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 8px rgba(90, 108, 125, 0.12),
+    0 12px 32px rgba(90, 108, 125, 0.18),
+    0 0 0 1px rgba(212, 167, 106, 0.3);
+  background:
     repeating-linear-gradient(
       90deg,
       transparent 0,
       transparent 38px,
-      rgba(168, 200, 216, 0.08) 38px,
-      rgba(168, 200, 216, 0.08) 40px
+      rgba(212, 167, 106, 0.08) 38px,
+      rgba(212, 167, 106, 0.08) 40px
     ),
-    var(--card-bg-hover);
+    linear-gradient(135deg, var(--card-bg-hover) 0%, rgba(255, 255, 255, 0.98) 100%);
+}
+
+.post-card:hover::before {
+  opacity: 1;
+}
+
+.post-card:hover::after {
+  opacity: 0.25;
+  transform: rotate(-5deg) scale(1.1);
 }
 
 .post-card-left {
@@ -216,15 +338,36 @@
 
 .post-category {
   display: inline-block;
-  padding: 6px 14px;
-  background: linear-gradient(135deg, var(--winter-blue), var(--ice-blue));
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--indigo-blue), var(--jade-green));
   color: white;
-  border-radius: 4px;
+  border-radius: 20px;
   font-size: 13px;
-  box-shadow: 0 2px 4px rgba(168, 200, 216, 0.3);
+  box-shadow:
+    0 2px 8px rgba(42, 75, 124, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   white-space: nowrap;
   text-align: center;
   width: 100%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.post-card:hover .post-category::before {
+  left: 100%;
 }
 
 .post-date-badge {
@@ -232,10 +375,26 @@
   flex-direction: column;
   align-items: center;
   padding: 12px 8px;
-  background: rgba(168, 200, 216, 0.15);
-  border: 2px solid var(--ice-blue);
-  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(250, 248, 243, 0.95));
+  border: 2px solid var(--cinnabar-red);
+  border-radius: 8px;
   min-width: 80px;
+  box-shadow:
+    0 2px 8px rgba(200, 60, 35, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.post-date-badge::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid var(--cinnabar-red);
+  border-radius: 6px;
+  opacity: 0.3;
 }
 
 .post-date-month {
@@ -288,15 +447,23 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
-  background: rgba(168, 200, 216, 0.15);
-  color: var(--river-gray);
-  border: 1px solid var(--ice-blue);
-  border-radius: 4px;
+  padding: 5px 12px;
+  background: linear-gradient(135deg, rgba(212, 167, 106, 0.12), rgba(126, 176, 155, 0.12));
+  color: var(--indigo-blue);
+  border: 1px solid var(--gold-yellow);
+  border-radius: 12px;
   font-size: 12px;
   font-family: 'ZCOOL XiaoWei', serif;
   font-weight: 600;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(212, 167, 106, 0.15);
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, rgba(212, 167, 106, 0.2), rgba(126, 176, 155, 0.2));
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(212, 167, 106, 0.25);
 }
 
 .post-meta {
@@ -334,12 +501,38 @@
 }
 
 .footer {
-  background: linear-gradient(180deg, rgba(90, 108, 125, 0.9), rgba(45, 62, 80, 0.95));
+  background:
+    linear-gradient(135deg,
+      rgba(42, 75, 124, 0.95) 0%,
+      rgba(46, 78, 63, 0.95) 50%,
+      rgba(90, 108, 125, 0.95) 100%);
   color: var(--frost-white);
-  padding: 40px 40px;
+  padding: 50px 40px;
   text-align: center;
-  border-top: 2px solid var(--ice-blue);
-  box-shadow: 0 -4px 20px rgba(168, 200, 216, 0.2);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg,
+    transparent,
+    var(--gold-yellow),
+    var(--jade-green),
+    var(--ice-blue),
+    transparent) 1;
+  box-shadow: 0 -4px 20px rgba(212, 167, 106, 0.15);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80"><path d="M0,40 Q200,10 400,40 T800,40 Q900,50 1000,40 T1200,40 L1200,0 L0,0 Z" fill="%23f5f0e8" opacity="0.15"/></svg>');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .footer-content p {
