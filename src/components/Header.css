@@ -12,7 +12,7 @@
   border-top: 1px solid rgba(168, 200, 216, 0.2);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
   box-shadow: 0 2px 8px var(--cold-shadow);
   transition: background 0.3s ease;
 }
@@ -37,12 +37,12 @@
 }
 
 .logo-text {
-  font-family: 'Liu Jian Mao Cao', 'Ma Shan Zheng', cursive;
-  font-size: 28px;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  font-size: 24px;
   color: var(--river-gray);
   margin: 0;
-  letter-spacing: 4px;
-  font-weight: 700;
+  letter-spacing: 6px;
+  font-weight: 900;
   text-shadow: 1px 1px 2px rgba(168, 200, 216, 0.2);
   border-left: 3px solid var(--ice-blue);
   padding-left: 12px;

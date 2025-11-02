@@ -88,11 +88,13 @@ npm run deploy
 ```
 
 这会：
+
 - 构建项目
 - 将构建结果推送到 `gh-pages` 分支
 - GitHub Pages 会自动从该分支部署
 
 如果使用此方法，需要在 GitHub 仓库设置中：
+
 1. 进入 `Settings` > `Pages`
 2. `Source` 选择 `Deploy from a branch`
 3. 选择 `gh-pages` 分支和 `/ (root)` 目录
@@ -112,7 +114,8 @@ npm run deploy
 
 **原因**: `base` 路径配置不正确
 
-**解决方案**: 
+**解决方案**:
+
 - 检查 `vite.config.js` 中的 `base` 配置
 - 检查 `src/App.jsx` 中的 `basename` 配置
 - 确保两者与你的仓库名匹配
@@ -122,6 +125,7 @@ npm run deploy
 **原因**: 相对路径问题
 
 **解决方案**:
+
 - 确保 `public/.nojekyll` 文件存在
 - 检查 `base` 配置是否正确
 
@@ -130,6 +134,7 @@ npm run deploy
 **原因**: 权限或配置问题
 
 **解决方案**:
+
 1. 检查仓库 `Settings` > `Actions` > `General`
 2. 确保 `Workflow permissions` 设置为 `Read and write permissions`
 3. 检查 `.github/workflows/deploy.yml` 文件是否正确
@@ -220,6 +225,7 @@ const basePath = import.meta.env.VITE_REPO_NAME
 ## 技术支持
 
 如有问题，请：
+
 1. 查看 [GitHub Pages 文档](https://docs.github.com/en/pages)
 2. 查看 [Vite 部署文档](https://vitejs.dev/guide/static-deploy.html)
 3. 在项目仓库提交 Issue
@@ -227,4 +233,3 @@ const basePath = import.meta.env.VITE_REPO_NAME
 ---
 
 祝您部署顺利！🚀
-

@@ -45,15 +45,15 @@
 }
 
 .hero-title {
-  font-family: 'Liu Jian Mao Cao', 'Ma Shan Zheng', cursive;
-  font-size: 64px;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  font-size: 56px;
   color: var(--river-gray);
   margin: 0 0 20px 0;
-  letter-spacing: 16px;
+  letter-spacing: 18px;
   text-shadow: 2px 2px 8px rgba(168, 200, 216, 0.3);
   position: relative;
-  font-weight: 700;
-  padding: 0 20px;
+  font-weight: 900;
+  padding: 0 24px;
   border-left: 4px solid var(--ice-blue);
   border-right: 4px solid var(--ice-blue);
   display: inline-block;
@@ -266,15 +266,18 @@
 
 .post-excerpt {
   color: var(--text-secondary);
-  line-height: 1.9;
+  line-height: 2.0;
   margin: 0 0 14px 0;
-  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
-  letter-spacing: 0.5px;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+  letter-spacing: 0.8px;
   text-align: justify;
+  font-size: 16px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .post-tags {

@@ -58,11 +58,12 @@
 }
 
 .login-title {
-  font-family: 'Liu Jian Mao Cao', 'Ma Shan Zheng', cursive;
-  font-size: 36px;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  font-size: 32px;
   color: var(--river-gray);
   margin: 0 0 12px 0;
-  letter-spacing: 8px;
+  letter-spacing: 10px;
+  font-weight: 900;
   text-shadow: 2px 2px 4px rgba(168, 200, 216, 0.3);
 }
 

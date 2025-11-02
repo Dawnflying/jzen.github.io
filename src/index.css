@@ -80,15 +80,18 @@
 }
 
 body {
-  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
   background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
   color: var(--text-primary);
   line-height: 2;
   letter-spacing: 0.5px;
   min-height: 100vh;
   position: relative;
-  font-weight: 500;
+  font-weight: 400;
   transition: background 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* 寒江背景效果 */

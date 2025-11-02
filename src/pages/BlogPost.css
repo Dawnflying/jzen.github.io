@@ -74,11 +74,11 @@
 
 .post-title {
   font-size: 32px;
-  font-weight: 700;
-  color: var(--deep-ink);
+  font-weight: 900;
+  color: var(--text-primary);
   margin: 0 0 24px 0;
   line-height: 1.6;
-  font-family: 'Liu Jian Mao Cao', 'ZCOOL XiaoWei', serif;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
   letter-spacing: 3px;
   text-shadow: 1px 1px 2px rgba(90, 108, 125, 0.1);
   border-left: 3px solid var(--ice-blue);
@@ -125,52 +125,64 @@
 }
 
 .post-content {
-  font-size: 17px;
-  line-height: 2.2;
+  font-size: 18px;
+  line-height: 2.0;
   color: var(--text-primary);
   margin-bottom: 40px;
-  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
-  letter-spacing: 0.5px;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+  letter-spacing: 0.8px;
   text-align: justify;
+  font-weight: 400;
+  word-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .post-content h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--river-gray);
-  margin: 40px 0 20px 0;
+  margin: 48px 0 24px 0;
   padding-bottom: 12px;
   padding-left: 12px;
   border-bottom: 2px solid var(--ice-blue);
   border-left: 3px solid var(--ice-blue);
-  font-family: 'ZCOOL XiaoWei', serif;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
   letter-spacing: 2px;
+  line-height: 1.6;
 }
 
 .post-content h3 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 32px 0 16px 0;
+  margin: 36px 0 18px 0;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
 }
 
 .post-content p {
-  margin: 16px 0;
+  margin: 20px 0;
   text-indent: 2em;
+  font-size: 18px;
+  line-height: 2.0;
+  color: var(--text-primary);
 }
 
 .post-content blockquote {
   border-left: 4px solid var(--ice-blue);
   border-right: 4px solid var(--ice-blue);
   background: rgba(168, 200, 216, 0.08);
-  padding: 20px 28px;
-  margin: 24px 0;
+  padding: 24px 32px;
+  margin: 28px 0;
   font-style: normal;
   color: var(--river-gray);
-  font-family: 'ZCOOL XiaoWei', serif;
-  letter-spacing: 1px;
-  line-height: 2.4;
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1.2px;
+  line-height: 2.2;
   position: relative;
+  font-size: 17px;
 }
 
 .post-content blockquote p {
@@ -179,21 +191,26 @@
 }
 
 .post-content ul, .post-content ol {
-  margin: 16px 0;
-  padding-left: 40px;
+  margin: 20px 0;
+  padding-left: 44px;
+  font-size: 18px;
+  line-height: 2.0;
 }
 
 .post-content li {
-  margin: 8px 0;
+  margin: 10px 0;
+  line-height: 2.0;
+  color: var(--text-primary);
 }
 
 .post-content code {
   background: var(--light-mist);
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 16px;
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 15px;
   color: var(--text-primary);
+  font-weight: 500;
 }
 
 .post-content pre {
@@ -286,7 +303,17 @@
   }
 
   .post-content {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  
+  .post-content p {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  
+  .post-content ul, .post-content ol {
+    font-size: 17px;
   }
 
   .post-content h2 {
