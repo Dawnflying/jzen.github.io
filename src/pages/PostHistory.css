@@ -1,0 +1,273 @@
+.history-page {
+  min-height: 100vh;
+  background: var(--paper-white);
+}
+
+.history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.history-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  color: var(--deep-ink);
+  margin: 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 2px;
+}
+
+.current-version,
+.history-list {
+  margin-bottom: 40px;
+}
+
+.current-version h3,
+.history-list h3 {
+  font-size: 20px;
+  color: var(--deep-ink);
+  margin: 0 0 20px 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ice-blue);
+}
+
+.version-card {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 38px,
+      rgba(168, 200, 216, 0.05) 38px,
+      rgba(168, 200, 216, 0.05) 40px
+    ),
+    var(--card-bg);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 
+    inset 2px 0 4px rgba(168, 200, 216, 0.1),
+    inset -2px 0 4px rgba(168, 200, 216, 0.1),
+    0 4px 16px var(--cold-shadow);
+  border-left: 3px solid var(--ice-blue);
+  border-right: 3px solid var(--ice-blue);
+  border-top: 1px solid rgba(168, 200, 216, 0.2);
+  border-bottom: 1px solid rgba(168, 200, 216, 0.2);
+  transition: all 0.3s ease;
+}
+
+.version-card.current {
+  border-left-color: var(--winter-blue);
+  border-right-color: var(--winter-blue);
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 38px,
+      rgba(106, 140, 175, 0.05) 38px,
+      rgba(106, 140, 175, 0.05) 40px
+    ),
+    var(--card-bg-hover);
+}
+
+.version-card:hover:not(.current) {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 2px 0 4px rgba(168, 200, 216, 0.1),
+    inset -2px 0 4px rgba(168, 200, 216, 0.1),
+    0 6px 20px rgba(168, 200, 216, 0.3);
+}
+
+.version-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.version-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, var(--winter-blue), var(--ice-blue));
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+}
+
+.version-card.current .version-badge {
+  background: linear-gradient(135deg, var(--river-gray), var(--distant-mountain));
+}
+
+.version-date {
+  font-size: 13px;
+  color: var(--river-gray);
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.version-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--deep-ink);
+  margin: 0 0 12px 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 1px;
+}
+
+.version-excerpt {
+  color: var(--river-gray);
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.version-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--light-mist);
+}
+
+.version-actions .btn {
+  flex: 1;
+  justify-content: center;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--river-gray);
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(45, 62, 80, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 38px,
+      rgba(168, 200, 216, 0.03) 38px,
+      rgba(168, 200, 216, 0.03) 40px
+    ),
+    var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border-left: 4px solid var(--ice-blue);
+  border-right: 4px solid var(--ice-blue);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content.large {
+  max-width: 900px;
+}
+
+.modal-header {
+  padding: 24px;
+  border-bottom: 2px solid var(--light-mist);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--deep-ink);
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.modal-date {
+  font-size: 14px;
+  color: var(--river-gray);
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body .preview-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--deep-ink);
+  margin: 0 0 24px 0;
+  font-family: 'ZCOOL XiaoWei', serif;
+  letter-spacing: 2px;
+}
+
+.modal-body .preview-content {
+  font-size: 16px;
+  line-height: 2;
+  color: var(--deep-ink);
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+}
+
+.modal-actions {
+  padding: 16px 24px;
+  border-top: 2px solid var(--light-mist);
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .history-container {
+    padding: 20px 20px 60px;
+  }
+
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
